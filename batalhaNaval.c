@@ -47,3 +47,28 @@ int main() {
         } else {
             printf("Você já atirou aqui!\n");
         }
+        
+        printf("Tabuleiro atualizado:\n");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (matriz[i][j] == -1) {
+                    printf("~ ");
+                } else if (matriz[i][j] == -2) {
+                    printf("X ");
+                } else {
+                    printf(". ");
+                }
+            }
+            printf("\n");
+        }
+        printf("Tiros restantes: %d | Navios restantes: %d\n", tirosRestantes, naviosRestantes);
+    }
+
+    if (naviosRestantes == 0) {
+        printf("Parabéns! Você afundou todos os navios.\n");
+    } else if (tirosRestantes == 0) {
+        printf("Fim dos tiros! Você não afundou todos os navios.\n");
+    }
+
+    return 0;
+}
